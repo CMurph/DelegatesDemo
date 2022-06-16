@@ -13,10 +13,20 @@ namespace DemoBasic
 
         private Action testAction;
         private Action<int, float> testintFloat;
+
+        private Func<bool> testboolFunc;
+        private Func<int, bool> testIntFunc;
+
         public void Start()
         {
             testintFloat = (int i, float f) => Console.WriteLine("This is intFloat");
-            testintFloat(7, 2.5f);
+          //testintFloat(7, 2.5f);
+
+            testboolFunc = () => false;
+            Console.WriteLine(testboolFunc());
+
+            testIntFunc = (i) => i > 5;
+            Console.WriteLine(testIntFunc(6));
         }
 
         private void Myfunction()
