@@ -10,14 +10,13 @@ namespace DemoBasic
 
         public TestDelegate testDelegate;
         public BoolDelegate boolDelegate;
+
+        private Action testAction;
+        private Action<int, float> testintFloat;
         public void Start()
         {
-            testDelegate = () => { Console.WriteLine("I am an anom func"); };
-            //testDelegate += MySecondFunction;
-            testDelegate();
-
-            boolDelegate = (p) => p > 5;
-            Console.WriteLine(boolDelegate(9));
+            testintFloat = (int i, float f) => Console.WriteLine("This is intFloat");
+            testintFloat(7, 2.5f);
         }
 
         private void Myfunction()
