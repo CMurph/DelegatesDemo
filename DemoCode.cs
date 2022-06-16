@@ -6,29 +6,28 @@ namespace DemoBasic
     public class DemoCode
     {
         public delegate void TestDelegate();
-        public delegate bool TestBoolDelegate(int i);
+        public delegate bool BoolDelegate(int i);
 
-        private TestDelegate testDelegate;
-        private TestBoolDelegate testBoolDelegate;
-
+        public TestDelegate testDelegate;
+        public BoolDelegate boolDelegate;
         public void Start()
         {
-            //testDelegate = MyTestFunction;
-            //testDelegate();
+            testDelegate = () => { Console.WriteLine("I am an anom func"); };
+            //testDelegate += MySecondFunction;
+            testDelegate();
 
-            testBoolDelegate = MyBoolFunction;
-            Console.WriteLine(testBoolDelegate(10));
-
+            boolDelegate = (p) => p > 5;
+            Console.WriteLine(boolDelegate(9));
         }
 
-        private void MyTestFunction()
+        private void Myfunction()
         {
-            Console.WriteLine("This is my test Function");
+            Console.WriteLine("This is my function");
         }
 
-        private void MySecondTestFunction()
+        private void MySecondFunction()
         {
-            Console.WriteLine("This is my second function");
+            Console.WriteLine("this is my second function");
         }
 
         private bool MyBoolFunction(int i)
