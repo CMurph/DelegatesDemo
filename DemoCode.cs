@@ -5,18 +5,18 @@ namespace DemoBasic
 {
     public class DemoCode
     {
-        public delegate void TestDelegate();
-        public delegate bool TestBoolDelegate(int i);
+        public delegate void TestDelegate();    // This delegate only takes zero parameters and returns void
+        public delegate bool TestBoolDelegate(int i);   // This delegate take and int and returns bool
 
         private TestDelegate testDelegate;
         private TestBoolDelegate testBoolDelegate;
 
         public void Start()
         {
-            //testDelegate = MyTestFunction;
-            //testDelegate();
+            testDelegate = MyTestFunction; 
+            testDelegate();
 
-            testBoolDelegate = MyBoolFunction;
+            testBoolDelegate = MyBoolFunction; // Only the method name when assigning, no need to mention parameters
             Console.WriteLine(testBoolDelegate(10));
 
         }
