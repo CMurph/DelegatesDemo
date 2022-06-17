@@ -5,43 +5,29 @@ namespace DemoBasic
 {
     public class DemoCode
     {
-        public delegate void TestDelegate();
+        // Bad practice
+        public delegate void TestDelegate(); 
         public delegate bool BoolDelegate(int i);
 
-        public TestDelegate testDelegate;
+        public TestDelegate testDelegate; 
         public BoolDelegate boolDelegate;
 
         private Action testAction;
-        private Action<int, float> testintFloat;
+        private Action<int, float> testIntFloatAction;
 
-        private Func<bool> testboolFunc;
-        private Func<int, bool> testIntFunc;
+        private Func<bool> testBoolFunc;
+        private Func<int, bool> testIntBoolFunc;
 
         public void Start()
         {
-            testintFloat = (int i, float f) => Console.WriteLine("This is intFloat");
-          //testintFloat(7, 2.5f);
+            testIntFloatAction = (int i, float f) => Console.WriteLine("This is intFloat");
+            testIntFloatAction(7, 2.5f);
 
-            testboolFunc = () => false;
-            Console.WriteLine(testboolFunc());
+            testBoolFunc = () => false;
+            Console.WriteLine(testBoolFunc());
 
-            testIntFunc = (i) => i > 5;
-            Console.WriteLine(testIntFunc(6));
-        }
-
-        private void Myfunction()
-        {
-            Console.WriteLine("This is my function");
-        }
-
-        private void MySecondFunction()
-        {
-            Console.WriteLine("this is my second function");
-        }
-
-        private bool MyBoolFunction(int i)
-        {
-            return i > 5;
+            testIntBoolFunc = (i) => i > 5;
+            Console.WriteLine(testIntBoolFunc(6));
         }
     }
 }
