@@ -19,6 +19,16 @@ namespace DemoBasic
             testBoolDelegate = MyBoolFunction; // Only the method name when assigning, no need to mention parameters
             Console.WriteLine(testBoolDelegate(10));
 
+            // Multicasting
+            //testDelegate = MyTestFunction;
+            //testDelegate += MySecondTestFunction;
+            //testDelegate();
+            //testDelegate -= MyTestFunction;
+            //testDelegate();
+
+
+            //testDelegate();
+            //testDelegate?.Invoke();
         }
 
         private void MyTestFunction()
