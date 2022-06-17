@@ -13,11 +13,14 @@ namespace DemoBasic
         public void Start()
         {
             testDelegate = () => { Console.WriteLine("I am an anom func"); };
-            //testDelegate += MySecondFunction;
             testDelegate();
 
-            boolDelegate = (p) => p > 5;
+            //boolDelegate = (int p) => { return p > 5; }
+            boolDelegate = (p) => p > 5;  
+
             Console.WriteLine(boolDelegate(9));
+
+            // Note we cannot remove these functions from a delegate as they have no name associated with them
         }
 
         private void Myfunction()
